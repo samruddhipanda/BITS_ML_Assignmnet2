@@ -59,12 +59,12 @@ def load_models():
     """Load all trained models from pickle files."""
     models = {}
     model_files = {
-        'Logistic Regression': 'model/logistic_regression.pkl',
-        'Decision Tree': 'model/decision_tree.pkl',
-        'kNN': 'model/knn.pkl',
-        'Naive Bayes': 'model/naive_bayes.pkl',
-        'Random Forest': 'model/random_forest.pkl',
-        'XGBoost': 'model/xgboost.pkl'
+        'Logistic Regression': 'logistic_regression.pkl',
+        'Decision Tree': 'decision_tree.pkl',
+        'kNN': 'knn.pkl',
+        'Naive Bayes': 'naive_bayes.pkl',
+        'Random Forest': 'random_forest.pkl',
+        'XGBoost': 'xgboost.pkl'
     }
     
     for name, filepath in model_files.items():
@@ -78,8 +78,8 @@ def load_models():
 @st.cache_resource
 def load_scaler():
     """Load the saved scaler."""
-    if os.path.exists('model/scaler.pkl'):
-        with open('model/scaler.pkl', 'rb') as f:
+    if os.path.exists('scaler.pkl'):
+        with open('scaler.pkl', 'rb') as f:
             return pickle.load(f)
     return None
 
@@ -87,8 +87,8 @@ def load_scaler():
 @st.cache_resource
 def load_feature_names():
     """Load the saved feature names."""
-    if os.path.exists('model/feature_names.pkl'):
-        with open('model/feature_names.pkl', 'rb') as f:
+    if os.path.exists('feature_names.pkl'):
+        with open('feature_names.pkl', 'rb') as f:
             return pickle.load(f)
     return None
 
